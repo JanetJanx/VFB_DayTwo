@@ -1,20 +1,23 @@
 #function fizzbuzz
 def fizzbuzz(a, b):
-    if isinstance((a and b), list):
-        combined_length = len(a) + len(b)
+    if isinstance(a, list) and isinstance(b, list):
+        if (len(a) != 0 and len(b) != 0) or (len(a) != 0 or len(b) != 0):
+            combined_length = len(a) + len(b)
         
-        if ((len(a) + len(b)) % 3 == 0) and ((len(a) + len(b)) % 5 == 0):
-            return "fizzbuzz"
-        elif (len(a) + len(b)) % 3 == 0:
-            return "fizz"
-        elif (len(a) + len(b)) % 5 == 0:
-            return "buzz"
+            if (combined_length % 3 == 0 and combined_length  % 5 == 0):
+                return "fizzbuzz"
+            elif combined_length  % 3 == 0:
+                return "fizz"
+            elif combined_length  % 5 == 0:
+                return "buzz"
+            else:
+                return combined_length
         else:
-            message = "The length of these lists isn't divisible by both 5 and 3, and it's:"
-            return combined_length
+            return "Empty lists"
     else:
         return "Invalid input"
 
 
 #display result
-print (fizzbuzz(['j','a','n','e','t'],['a','n','a','m','a']))
+print (fizzbuzz([],[]))
+print (fizzbuzz(['j','a','n','e','t'],['a','n','a','m','a','r','y']))
