@@ -2,7 +2,7 @@ import unittest
 from fizzbuzz import fizzbuzz
 
 
-class fizzbuzzTest(unittest.TestCase):
+class FizzbuzzTest(unittest.TestCase):
 
     def test_non_list_inputs(self):
         self.assertEqual(fizzbuzz(5, 8), "Invalid input")
@@ -21,9 +21,12 @@ class fizzbuzzTest(unittest.TestCase):
 
     def test_other_total(self):
         self.assertEqual(fizzbuzz([4, 5, 6], [3]), 4)
+    
+    def test_one_empty(self):
+        self.assertEqual(fizzbuzz([1, 3, 5], []), "fizz")
 
     def test_both_empty(self):
-        self.assertEqual(fizzbuzz([1, 3, 5], []), "fizz")
+        self.assertEqual(fizzbuzz([],[]), "Empty lists")
 
 
 if __name__== '__main__':
