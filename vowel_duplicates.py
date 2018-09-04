@@ -5,13 +5,13 @@ def vowels(word):
     #get number of duplicates using set function
     duplicates = len(word) - len(set(word))
 
-    for x in word:
+    for x in set(word):
         if x in vowel and x not in new_word:
            new_word.append(x)
         else:
            continue
-
-    return new_word, duplicates
+    new_string_word = new_word = "".join(new_word)
+    return new_string_word, duplicates
 
 #display new list
 print (vowels("edahdah"))
