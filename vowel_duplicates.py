@@ -1,18 +1,22 @@
 #function to count number of vowels in the string and return their duplicates
 def vowels(word):
-    new_word = []
-    vowel = ['a', 'e', 'i', 'o', 'u']
-    for x in word:
-        if x in vowel:
-           new_word.append(x)
-           count = new_word.count(x)
-           if count > 1:
-               new_word.pop(1)
-               count = count-1
-               return new_word, count
+    #vowels set
+    vowel = set("aeiou")
 
-    return new_word
+    #word without duplicates
+    word_set = set(word)
+
+    #get number of duplicates using set function
+    duplicates = len(word) - len(word_set)
+
+    #get the vowels in the word
+    new_word = word_set.intersection(vowel)
+    
+    #change new_word to a string
+    new_string_word ="".join(sorted(new_word))
+
+    return new_string_word, duplicates
 
 #display new list
-word = "edahdah"
-print (vowels(word))
+print (vowels("edahdah"))
+print (vowels("drink water"))
