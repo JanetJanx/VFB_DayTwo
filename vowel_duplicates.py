@@ -13,7 +13,7 @@ def vowels(word):
     new_word = word_set.intersection(vowel)
     
     #change new_word to a string
-    new_string_word ="".join(new_word)
+    new_string_word ="".join(sorted(new_word))
 
     return new_string_word, duplicates
 
