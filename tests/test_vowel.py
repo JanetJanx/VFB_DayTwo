@@ -1,5 +1,5 @@
 import unittest
-from vowel_duplicates import vowels
+from app.vowel_duplicates import vowels
 
 class VowelTest (unittest.TestCase):
     
